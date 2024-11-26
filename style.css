@@ -1,91 +1,118 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #FF77FF, #6A82FB); /* Yumuşak geçişli modern arka plan */
+  font-family: 'Poppins', sans-serif; /* Modern ve şık bir font */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.message-container {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Koyu bir arka plan kutusu */
+  border-radius: 20px;
+  max-width: 800px; /* Mesaj kutusunu biraz daha genişlettim */
+  width: 90%;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+  font-size: 2.5rem; /* Yazı boyutunu biraz daha büyüttüm */
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Daha etkili bir gölge */
+  animation: fadeIn 3s ease-out, bounce 1.5s infinite ease-in-out;
+}
+
+.message br {
+  margin: 10px 0;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #FFDD57; /* Sarımsı bir ton */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  body {
-    background: linear-gradient(135deg, #FF77FF, #6A82FB); /* Yumuşak geçişli modern arka plan */
-    font-family: 'Poppins', sans-serif; /* Modern ve şık bir font */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  
-  .message-container {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Koyu bir arka plan kutusu */
-    border-radius: 20px;
-    max-width: 800px; /* Mesaj kutusunu biraz daha genişlettim */
-    width: 90%;
-    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+  40% {
+    transform: translateY(-15px);
   }
-  
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hover efektleri */
+.message:hover {
+  color: #FFDD57;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.name:hover {
+  color: #FF77FF;
+  transition: 0.3s ease-in-out;
+}
+
+/* Mobil cihazlar için responsive tasarım */
+@media (max-width: 768px) {
   .message {
-    font-size: 2.5rem; /* Yazı boyutunu biraz daha büyüttüm */
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Daha etkili bir gölge */
-    animation: fadeIn 3s ease-out, bounce 1.5s infinite ease-in-out;
+    font-size: 2rem; /* Yazı boyutunu mobilde biraz küçülttük */
   }
-  
-  .message br {
-    margin: 10px 0;
+  .message-container {
+    padding: 15px;
+    max-width: 90%; /* Mobilde kutu genişliğini biraz daraltıyoruz */
   }
-  
-  .name {
-    font-size: 2rem;
-    font-weight: 600;
-    font-style: italic;
-    color: #FFDD57; /* Sarımsı bir ton */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
+  .container {
+    padding: 15px;
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px; /* Mobilde body'ye biraz iç boşluk ekleyelim */
   }
-  
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-15px);
-    }
-    60% {
-      transform: translateY(-10px);
-    }
+  .message {
+    font-size: 1.5rem; /* Mobilde yazıyı daha da küçültüyoruz */
   }
-  
-  /* Hover efektleri */
-  .message:hover {
-    color: #FFDD57;
-    transform: scale(1.05);
-    transition: 0.3s ease-in-out;
+  .message-container {
+    max-width: 100%;
   }
-  
-  .name:hover {
-    color: #FF77FF;
-    transition: 0.3s ease-in-out;
-  }
+}
